@@ -31,7 +31,6 @@ namespace DataBindingExampleCRUD
                 OnPropertyChanged("Product");
             }
         }
-
        
         public ProductCollection Products { get; set; }
 
