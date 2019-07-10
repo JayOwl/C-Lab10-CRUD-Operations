@@ -87,7 +87,7 @@ namespace DataBindingExampleCRUD.Business
                 result = false;
             }
 
-            if (product.Cost < 0)
+            if (product.Cost < 0 || product.SellPrice < 0)
             {
                 errors.Add("Cost cannot be less than zero.");
                 result = false;

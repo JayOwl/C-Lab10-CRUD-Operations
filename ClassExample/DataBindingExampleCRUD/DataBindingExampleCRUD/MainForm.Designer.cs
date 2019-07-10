@@ -43,6 +43,11 @@
             this.textBoxQuantity = new System.Windows.Forms.TextBox();
             this.buttonNewProduct = new System.Windows.Forms.Button();
             this.buttonDeleteProduct = new System.Windows.Forms.Button();
+            this.checkBoxActive = new System.Windows.Forms.CheckBox();
+            this.textBoxSellPrice = new System.Windows.Forms.TextBox();
+            this.labelSellPrice = new System.Windows.Forms.Label();
+            this.textBoxNotes = new System.Windows.Forms.TextBox();
+            this.labelNotes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxProducts
@@ -52,13 +57,13 @@
             this.listBoxProducts.IntegralHeight = false;
             this.listBoxProducts.Location = new System.Drawing.Point(0, 0);
             this.listBoxProducts.Name = "listBoxProducts";
-            this.listBoxProducts.Size = new System.Drawing.Size(128, 254);
+            this.listBoxProducts.Size = new System.Drawing.Size(128, 318);
             this.listBoxProducts.TabIndex = 1;
             this.listBoxProducts.SelectedIndexChanged += new System.EventHandler(this.listBoxProducts_SelectedIndexChanged);
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(349, 205);
+            this.buttonSave.Location = new System.Drawing.Point(349, 256);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(85, 23);
             this.buttonSave.TabIndex = 11;
@@ -69,7 +74,7 @@
             // checkBoxTaxable
             // 
             this.checkBoxTaxable.AutoSize = true;
-            this.checkBoxTaxable.Location = new System.Drawing.Point(233, 154);
+            this.checkBoxTaxable.Location = new System.Drawing.Point(233, 217);
             this.checkBoxTaxable.Name = "checkBoxTaxable";
             this.checkBoxTaxable.Size = new System.Drawing.Size(64, 17);
             this.checkBoxTaxable.TabIndex = 10;
@@ -78,7 +83,7 @@
             // 
             // textBoxCost
             // 
-            this.textBoxCost.Location = new System.Drawing.Point(233, 116);
+            this.textBoxCost.Location = new System.Drawing.Point(233, 148);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.Size = new System.Drawing.Size(100, 20);
             this.textBoxCost.TabIndex = 9;
@@ -87,7 +92,7 @@
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(233, 82);
+            this.textBoxDescription.Location = new System.Drawing.Point(233, 114);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(201, 20);
             this.textBoxDescription.TabIndex = 7;
@@ -121,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 85);
+            this.label3.Location = new System.Drawing.Point(164, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 6;
@@ -130,7 +135,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(164, 119);
+            this.label4.Location = new System.Drawing.Point(164, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 8;
@@ -155,7 +160,7 @@
             // 
             // buttonNewProduct
             // 
-            this.buttonNewProduct.Location = new System.Drawing.Point(167, 205);
+            this.buttonNewProduct.Location = new System.Drawing.Point(167, 256);
             this.buttonNewProduct.Name = "buttonNewProduct";
             this.buttonNewProduct.Size = new System.Drawing.Size(85, 23);
             this.buttonNewProduct.TabIndex = 14;
@@ -165,7 +170,7 @@
             // 
             // buttonDeleteProduct
             // 
-            this.buttonDeleteProduct.Location = new System.Drawing.Point(258, 205);
+            this.buttonDeleteProduct.Location = new System.Drawing.Point(258, 256);
             this.buttonDeleteProduct.Name = "buttonDeleteProduct";
             this.buttonDeleteProduct.Size = new System.Drawing.Size(85, 23);
             this.buttonDeleteProduct.TabIndex = 15;
@@ -173,13 +178,62 @@
             this.buttonDeleteProduct.UseVisualStyleBackColor = true;
             this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
             // 
+            // checkBoxActive
+            // 
+            this.checkBoxActive.AutoSize = true;
+            this.checkBoxActive.Location = new System.Drawing.Point(349, 217);
+            this.checkBoxActive.Name = "checkBoxActive";
+            this.checkBoxActive.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxActive.TabIndex = 16;
+            this.checkBoxActive.Text = "&Active";
+            this.checkBoxActive.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSellPrice
+            // 
+            this.textBoxSellPrice.Location = new System.Drawing.Point(233, 183);
+            this.textBoxSellPrice.Name = "textBoxSellPrice";
+            this.textBoxSellPrice.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSellPrice.TabIndex = 17;
+            this.textBoxSellPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelSellPrice
+            // 
+            this.labelSellPrice.AutoSize = true;
+            this.labelSellPrice.Location = new System.Drawing.Point(164, 186);
+            this.labelSellPrice.Name = "labelSellPrice";
+            this.labelSellPrice.Size = new System.Drawing.Size(54, 13);
+            this.labelSellPrice.TabIndex = 18;
+            this.labelSellPrice.Text = "Sell &Price:";
+            // 
+            // textBoxNotes
+            // 
+            this.textBoxNotes.Location = new System.Drawing.Point(233, 79);
+            this.textBoxNotes.Name = "textBoxNotes";
+            this.textBoxNotes.Size = new System.Drawing.Size(201, 20);
+            this.textBoxNotes.TabIndex = 19;
+            // 
+            // labelNotes
+            // 
+            this.labelNotes.AutoSize = true;
+            this.labelNotes.Location = new System.Drawing.Point(164, 82);
+            this.labelNotes.Name = "labelNotes";
+            this.labelNotes.Size = new System.Drawing.Size(38, 13);
+            this.labelNotes.TabIndex = 20;
+            this.labelNotes.Text = "N&otes:";
+            this.labelNotes.Click += new System.EventHandler(this.labelNotes_Click);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(474, 254);
+            this.ClientSize = new System.Drawing.Size(474, 318);
+            this.Controls.Add(this.labelNotes);
+            this.Controls.Add(this.textBoxNotes);
+            this.Controls.Add(this.labelSellPrice);
+            this.Controls.Add(this.textBoxSellPrice);
+            this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.buttonDeleteProduct);
             this.Controls.Add(this.buttonNewProduct);
             this.Controls.Add(this.textBoxQuantity);
@@ -222,6 +276,11 @@
         private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.Button buttonNewProduct;
         private System.Windows.Forms.Button buttonDeleteProduct;
+        private System.Windows.Forms.CheckBox checkBoxActive;
+        private System.Windows.Forms.TextBox textBoxSellPrice;
+        private System.Windows.Forms.Label labelSellPrice;
+        private System.Windows.Forms.TextBox textBoxNotes;
+        private System.Windows.Forms.Label labelNotes;
     }
 }
 

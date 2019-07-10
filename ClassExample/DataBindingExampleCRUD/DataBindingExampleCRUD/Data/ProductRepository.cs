@@ -28,8 +28,8 @@ namespace DataBindingExampleCRUD.Data
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = $@"INSERT INTO {productTableName}
-                                 (Quantity, Sku, Description, Cost, Taxable)
-                                  VALUES (@quantity, @sku, @description, @cost, @taxable)";
+                                 (Quantity, Sku, Description, Cost, SellPrice, Taxable, Active, Notes)
+                                  VALUES (@quantity, @sku, @description, @cost, @sellprice, @taxable, @active, @notes)";
 
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -55,10 +55,21 @@ namespace DataBindingExampleCRUD.Data
                     else
                     {
                         cmd.Parameters.AddWithValue("@description", DBNull.Value);
-                    }
+                    }                
 
                     cmd.Parameters.AddWithValue("@cost", product.Cost);
+                    cmd.Parameters.AddWithValue("@sellprice", product.SellPrice);
                     cmd.Parameters.AddWithValue("@taxable", product.Taxable);
+                    cmd.Parameters.AddWithValue("@active", product.Active);
+
+                    if (product.Notes != null)
+                    {
+                        cmd.Parameters.AddWithValue("@notes", product.Notes);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@notes", DBNull.Value);
+                    }
 
                     conn.Open();
 
@@ -79,9 +90,12 @@ namespace DataBindingExampleCRUD.Data
                 string query = $@"UPDATE {productTableName}
                                   SET Quantity = @quantity,
                                       Sku = @sku,
-                                      Description = @description,
+                                      Description = @description,                                      
                                       Cost = @cost,
-                                      Taxable = @taxable
+                                      SellPrice = @sellprice,
+                                      Taxable = @taxable,    
+                                      Active = @active,
+                                      Notes = @notes
                                   WHERE ProductId = @productId";
 
                 using (SqlCommand cmd = new SqlCommand())
@@ -108,10 +122,22 @@ namespace DataBindingExampleCRUD.Data
                     else
                     {
                         cmd.Parameters.AddWithValue("@description", DBNull.Value);
-                    }
+                    }                  
 
                     cmd.Parameters.AddWithValue("@cost", product.Cost);
+                    cmd.Parameters.AddWithValue("@sellprice", product.SellPrice);
                     cmd.Parameters.AddWithValue("@taxable", product.Taxable);
+                    cmd.Parameters.AddWithValue("@active", product.Active);
+
+                    if (product.Notes != null)
+                    {
+                        cmd.Parameters.AddWithValue("@notes", product.Notes);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@notes", DBNull.Value);
+                    }
+
                     cmd.Parameters.AddWithValue("@productId", product.ProductId);
 
                     conn.Open();
@@ -129,7 +155,7 @@ namespace DataBindingExampleCRUD.Data
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                string query = $@"SELECT ProductId, Quantity, Sku, Description, Cost, Taxable
+                string query = $@"SELECT ProductId, Quantity, Sku, Description, Cost, SellPrice, Taxable, Active, Notes
                                   FROM {productTableName}
                                   ORDER BY Sku";
 
@@ -148,9 +174,12 @@ namespace DataBindingExampleCRUD.Data
                         int productId;
                         int quantity;
                         string sku;
-                        string description;
+                        string description;                       
                         decimal cost;
+                        decimal sellprice;
                         bool taxable;
+                        bool active;
+                        string notes;
 
                         while (reader.Read())
                         {
@@ -165,19 +194,58 @@ namespace DataBindingExampleCRUD.Data
                             else
                             {
                                 description = null;
+                            }                       
+                           
+                            cost = (decimal)reader["Cost"];
+
+
+
+                            if (!reader.IsDBNull(5))
+                            {
+                                sellprice = (decimal)reader["SellPrice"];
+                            }
+                            else
+                            {
+                                sellprice = 0.0m;
                             }
 
-                            cost = (decimal)reader["Cost"];
+
+
                             taxable = (bool)reader["Taxable"];
+
+                            
+
+                            if (!reader.IsDBNull(7))
+                            {
+                                active = (bool)reader["Active"];
+                            }
+                            else
+                            {
+                                active = false;
+                            }
+
+
+                            if (!reader.IsDBNull(8))
+                            {
+                                notes = reader["Notes"] as string;
+                            }
+                            else
+                            {
+                                notes = null;
+                            }
+
 
                             products.Add(new Product
                             {
                                  ProductId = productId
                                , Quantity = quantity
                                , Sku = sku
-                               , Description = description
+                               , Description = description                               
                                , Cost = cost
+                               , SellPrice = sellprice                               
                                , Taxable = taxable
+                               , Active = active
+                               , Notes = notes
                             });
                         }
                     }

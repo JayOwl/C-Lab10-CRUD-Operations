@@ -44,7 +44,10 @@ namespace DataBindingExampleCRUD
                 Sku = product.Sku,
                 Description = product.Description,
                 Cost = product.Cost,
-                Taxable = product.Taxable
+                SellPrice = product.SellPrice,
+                Taxable = product.Taxable,
+                Active = product.Active,
+                Notes = product.Notes
             };
         }
 

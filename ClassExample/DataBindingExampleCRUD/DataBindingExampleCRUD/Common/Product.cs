@@ -11,8 +11,11 @@ namespace DataBindingExampleCRUD.Common
         public int ProductId { get; set; }
         public int Quantity { get; set; }
         public string Sku { get; set; }
-        public string Description { get; set; }
+        public string Description { get; set; }    
         public decimal Cost { get; set; }
+        public decimal SellPrice { get; set; }
         public bool Taxable { get; set; }
+        public bool Active { get; set; }
+        public string Notes { get; set; }
     }
 }

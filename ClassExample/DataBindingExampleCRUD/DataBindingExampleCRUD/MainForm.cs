@@ -47,8 +47,11 @@ namespace DataBindingExampleCRUD
             textBoxQuantity.DataBindings.Add("Text", productVM, "Product.Quantity", true, DataSourceUpdateMode.OnValidation, "0", "#,##0;(#,##0);0"); 
             textBoxSku.DataBindings.Add("Text", productVM, "Product.Sku", false, DataSourceUpdateMode.OnValidation, "");
             textBoxDescription.DataBindings.Add("Text", productVM, "Product.Description");
+            textBoxNotes.DataBindings.Add("Text", productVM, "Product.Notes");
             textBoxCost.DataBindings.Add("Text", productVM, "Product.Cost", true, DataSourceUpdateMode.OnValidation, "0.00", "#,##0.00;(#,##0.00);0.00");
+            textBoxSellPrice.DataBindings.Add("Text", productVM, "Product.SellPrice", true, DataSourceUpdateMode.OnValidation, "0.00", "#,##0.00;(#,##0.00);0.00");
             checkBoxTaxable.DataBindings.Add("Checked", productVM, "Product.Taxable");
+            checkBoxActive.DataBindings.Add("Checked", productVM, "Product.Active");
 
             listBoxProducts.DataSource = productVM.Products;
             listBoxProducts.DisplayMember = "Sku";
@@ -150,6 +153,11 @@ namespace DataBindingExampleCRUD
         }
 
         private void textBoxCost_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNotes_Click(object sender, EventArgs e)
         {
 
         }
