@@ -66,11 +66,7 @@ namespace DataBindingExampleCRUD.Business
 
         private static bool validate(Product product)
         {
-            //make up some rules
-            //quantity != < 0;
-            //sku cannot be blank
-            //unless cost != < 0
-
+          
             bool result = true;
 
             errors.Clear();
@@ -81,15 +77,16 @@ namespace DataBindingExampleCRUD.Business
                 result = false;
             }
 
+       
             if (string.IsNullOrWhiteSpace(product.Sku))
             {
                 errors.Add("Sku cannot be blank.");
                 result = false;
             }
 
-            if (product.Cost < 0 || product.SellPrice < 0)
+            if (product.Cost < 0 || product.SellPrice < 0 || product.SellPrice < product.Cost)
             {
-                errors.Add("Cost cannot be less than zero.");
+                errors.Add("Cost cannot be less than zero or higher than Sell Price.");
                 result = false;
             }
 

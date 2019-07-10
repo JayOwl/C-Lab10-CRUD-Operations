@@ -58,7 +58,7 @@
             this.listBoxProducts.Location = new System.Drawing.Point(0, 0);
             this.listBoxProducts.Name = "listBoxProducts";
             this.listBoxProducts.Size = new System.Drawing.Size(128, 318);
-            this.listBoxProducts.TabIndex = 1;
+            this.listBoxProducts.TabIndex = 0;
             this.listBoxProducts.SelectedIndexChanged += new System.EventHandler(this.listBoxProducts_SelectedIndexChanged);
             // 
             // buttonSave
@@ -66,7 +66,7 @@
             this.buttonSave.Location = new System.Drawing.Point(349, 256);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(85, 23);
-            this.buttonSave.TabIndex = 11;
+            this.buttonSave.TabIndex = 17;
             this.buttonSave.Text = "&Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -77,7 +77,7 @@
             this.checkBoxTaxable.Location = new System.Drawing.Point(233, 217);
             this.checkBoxTaxable.Name = "checkBoxTaxable";
             this.checkBoxTaxable.Size = new System.Drawing.Size(64, 17);
-            this.checkBoxTaxable.TabIndex = 10;
+            this.checkBoxTaxable.TabIndex = 13;
             this.checkBoxTaxable.Text = "&Taxable";
             this.checkBoxTaxable.UseVisualStyleBackColor = true;
             // 
@@ -86,7 +86,7 @@
             this.textBoxCost.Location = new System.Drawing.Point(233, 148);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCost.TabIndex = 9;
+            this.textBoxCost.TabIndex = 10;
             this.textBoxCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxCost.TextChanged += new System.EventHandler(this.textBoxCost_TextChanged);
             // 
@@ -95,7 +95,7 @@
             this.textBoxDescription.Location = new System.Drawing.Point(233, 114);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(201, 20);
-            this.textBoxDescription.TabIndex = 7;
+            this.textBoxDescription.TabIndex = 8;
             this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // textBoxSku
@@ -103,7 +103,7 @@
             this.textBoxSku.Location = new System.Drawing.Point(233, 48);
             this.textBoxSku.Name = "textBoxSku";
             this.textBoxSku.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSku.TabIndex = 5;
+            this.textBoxSku.TabIndex = 4;
             // 
             // label1
             // 
@@ -120,7 +120,7 @@
             this.label2.Location = new System.Drawing.Point(164, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 3;
             this.label2.Text = "S&KU:";
             // 
             // label3
@@ -129,7 +129,7 @@
             this.label3.Location = new System.Drawing.Point(164, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 7;
             this.label3.Text = "&Description:";
             // 
             // label4
@@ -138,7 +138,7 @@
             this.label4.Location = new System.Drawing.Point(164, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 9;
             this.label4.Text = "&Cost:";
             // 
             // label5
@@ -147,7 +147,7 @@
             this.label5.Location = new System.Drawing.Point(164, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 2;
+            this.label5.TabIndex = 1;
             this.label5.Text = "&Quantity:";
             // 
             // textBoxQuantity
@@ -155,7 +155,7 @@
             this.textBoxQuantity.Location = new System.Drawing.Point(233, 17);
             this.textBoxQuantity.Name = "textBoxQuantity";
             this.textBoxQuantity.Size = new System.Drawing.Size(100, 20);
-            this.textBoxQuantity.TabIndex = 3;
+            this.textBoxQuantity.TabIndex = 2;
             this.textBoxQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // buttonNewProduct
@@ -163,7 +163,7 @@
             this.buttonNewProduct.Location = new System.Drawing.Point(167, 256);
             this.buttonNewProduct.Name = "buttonNewProduct";
             this.buttonNewProduct.Size = new System.Drawing.Size(85, 23);
-            this.buttonNewProduct.TabIndex = 14;
+            this.buttonNewProduct.TabIndex = 15;
             this.buttonNewProduct.Text = "&New Product";
             this.buttonNewProduct.UseVisualStyleBackColor = true;
             this.buttonNewProduct.Click += new System.EventHandler(this.buttonNewProduct_Click);
@@ -173,7 +173,7 @@
             this.buttonDeleteProduct.Location = new System.Drawing.Point(258, 256);
             this.buttonDeleteProduct.Name = "buttonDeleteProduct";
             this.buttonDeleteProduct.Size = new System.Drawing.Size(85, 23);
-            this.buttonDeleteProduct.TabIndex = 15;
+            this.buttonDeleteProduct.TabIndex = 16;
             this.buttonDeleteProduct.Text = "D&elete";
             this.buttonDeleteProduct.UseVisualStyleBackColor = true;
             this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
@@ -184,7 +184,7 @@
             this.checkBoxActive.Location = new System.Drawing.Point(349, 217);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxActive.TabIndex = 16;
+            this.checkBoxActive.TabIndex = 14;
             this.checkBoxActive.Text = "&Active";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,7 @@
             this.textBoxSellPrice.Location = new System.Drawing.Point(233, 183);
             this.textBoxSellPrice.Name = "textBoxSellPrice";
             this.textBoxSellPrice.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSellPrice.TabIndex = 17;
+            this.textBoxSellPrice.TabIndex = 12;
             this.textBoxSellPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelSellPrice
@@ -202,7 +202,7 @@
             this.labelSellPrice.Location = new System.Drawing.Point(164, 186);
             this.labelSellPrice.Name = "labelSellPrice";
             this.labelSellPrice.Size = new System.Drawing.Size(54, 13);
-            this.labelSellPrice.TabIndex = 18;
+            this.labelSellPrice.TabIndex = 11;
             this.labelSellPrice.Text = "Sell &Price:";
             // 
             // textBoxNotes
@@ -210,7 +210,7 @@
             this.textBoxNotes.Location = new System.Drawing.Point(233, 79);
             this.textBoxNotes.Name = "textBoxNotes";
             this.textBoxNotes.Size = new System.Drawing.Size(201, 20);
-            this.textBoxNotes.TabIndex = 19;
+            this.textBoxNotes.TabIndex = 6;
             // 
             // labelNotes
             // 
@@ -218,7 +218,7 @@
             this.labelNotes.Location = new System.Drawing.Point(164, 82);
             this.labelNotes.Name = "labelNotes";
             this.labelNotes.Size = new System.Drawing.Size(38, 13);
-            this.labelNotes.TabIndex = 20;
+            this.labelNotes.TabIndex = 5;
             this.labelNotes.Text = "N&otes:";
             this.labelNotes.Click += new System.EventHandler(this.labelNotes_Click);
             // 

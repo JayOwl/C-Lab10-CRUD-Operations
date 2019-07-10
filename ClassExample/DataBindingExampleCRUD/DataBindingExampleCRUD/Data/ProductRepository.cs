@@ -198,8 +198,6 @@ namespace DataBindingExampleCRUD.Data
                            
                             cost = (decimal)reader["Cost"];
 
-
-
                             if (!reader.IsDBNull(5))
                             {
                                 sellprice = (decimal)reader["SellPrice"];
@@ -209,11 +207,7 @@ namespace DataBindingExampleCRUD.Data
                                 sellprice = 0.0m;
                             }
 
-
-
-                            taxable = (bool)reader["Taxable"];
-
-                            
+                            taxable = (bool)reader["Taxable"];                            
 
                             if (!reader.IsDBNull(7))
                             {
@@ -224,7 +218,6 @@ namespace DataBindingExampleCRUD.Data
                                 active = false;
                             }
 
-
                             if (!reader.IsDBNull(8))
                             {
                                 notes = reader["Notes"] as string;
@@ -233,7 +226,6 @@ namespace DataBindingExampleCRUD.Data
                             {
                                 notes = null;
                             }
-
 
                             products.Add(new Product
                             {
